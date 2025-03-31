@@ -9,10 +9,46 @@ from zope.component import adapter
 from zope.interface import Interface
 from zope import schema
 
+
 class IElhuyarAPIConfig(Interface):
-    myfield_name = schema.TextLine(
+
+    api_base_url = schema.TextLine(
         title=_(
-            "This is an example field for this control panel",
+            "The API base url",
+        ),
+        description=_(
+            "",
+        ),
+        default="https://mt-api.elhuyar.eus",
+        required=False,
+        readonly=False,
+    )
+    translation_engine = schema.TextLine(
+        title=_(
+            "The API base url",
+        ),
+        description=_(
+            "Engine for the language pair: nmt | apertium | apertiumc",
+        ),
+        default="nmt",
+        required=False,
+        readonly=False,
+    )
+
+    api_id = schema.TextLine(
+        title=_(
+            "The API id provided by Elhuyar",
+        ),
+        description=_(
+            "",
+        ),
+        default="",
+        required=False,
+        readonly=False,
+    )
+    api_key = schema.TextLine(
+        title=_(
+            "The API key provided by Elhuyar",
         ),
         description=_(
             "",
@@ -26,13 +62,12 @@ class IElhuyarAPIConfig(Interface):
 class ElhuyarAPIConfig(RegistryEditForm):
     schema = IElhuyarAPIConfig
     schema_prefix = "cs.translator.elhuyar.elhuyar_a_p_i_config"
-    label = _("Elhuyar A P I Config")
+    label = _("Elhuyar API Config")
 
 
 ElhuyarAPIConfigView = layout.wrap_form(
     ElhuyarAPIConfig, ControlPanelFormWrapper
 )
-
 
 
 @adapter(Interface, ICsTranslatorElhuyarLayer)
@@ -42,6 +77,6 @@ class ElhuyarAPIConfigConfigletPanel(RegistryConfigletPanel):
     schema = IElhuyarAPIConfig
     configlet_id = "elhuyar_a_p_i_config-controlpanel"
     configlet_category_id = "Products"
-    title = _("Elhuyar A P I Config")
+    title = _("Elhuyar API Config")
     group = ""
     schema_prefix = "cs.translator.elhuyar.elhuyar_a_p_i_config"
