@@ -9,7 +9,7 @@
       factory=".post.Translator"
       for="plone.base.interfaces.INavigationRoot"
       permission="zope2.View"
-      name="@translate"
+      name="@elhuyar-translator"
       />
 
 
