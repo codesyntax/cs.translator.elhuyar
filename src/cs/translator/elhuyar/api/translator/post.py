@@ -58,7 +58,8 @@ class Translator(Service):
                 # - "source_sentences"
                 # - "translated_sentences"
                 # - "words"
-                return result.json().get("translated_text", "")
+                translated_text = result.json().get("translated_text", "")
+                return {"translated_text": translated_text}
             else:
                 try:
                     self.request.response.setStatus(result.status_code)
