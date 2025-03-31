@@ -1,0 +1,6 @@
+[report]
+include =
+    src/cs.translator/*
+omit =
+    */test*
+    */upgrades/*
