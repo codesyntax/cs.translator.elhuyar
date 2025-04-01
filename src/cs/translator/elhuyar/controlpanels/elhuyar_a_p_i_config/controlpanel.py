@@ -5,9 +5,9 @@ from plone.app.registry.browser.controlpanel import ControlPanelFormWrapper
 from plone.app.registry.browser.controlpanel import RegistryEditForm
 from plone.restapi.controlpanels import RegistryConfigletPanel
 from plone.z3cform import layout
+from zope import schema
 from zope.component import adapter
 from zope.interface import Interface
-from zope import schema
 
 
 class IElhuyarAPIConfig(Interface):
@@ -25,7 +25,7 @@ class IElhuyarAPIConfig(Interface):
     )
     translation_engine = schema.TextLine(
         title=_(
-            "The API base url",
+            "The API engine",
         ),
         description=_(
             "Engine for the language pair: nmt | apertium | apertiumc",
@@ -72,13 +72,13 @@ class IElhuyarAPIConfig(Interface):
 
     language_pairs_to = schema.List(
         title=_(
-            u"Languages to give as translatable",
+            "Languages to give as translatable",
         ),
         description=_(
-            u"",
+            "",
         ),
         value_type=schema.TextLine(
-            title=u"",
+            title="",
         ),
         default=[],
         required=False,
