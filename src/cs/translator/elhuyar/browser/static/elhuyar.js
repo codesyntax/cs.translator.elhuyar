@@ -1,10 +1,12 @@
 let original_data = null
 const elhuyarTranslate = (selector, destination_language) => {
+  let notranslates_html = []
   const portal_url = document.querySelector('body').getAttribute('data-portal-url')
   const lang = document.querySelector('html').getAttribute('lang')
   const content = document.querySelector(selector)
   const active = document.querySelector('button.elhuyar.active')
-
+  const notranslates = document.querySelectorAll('.elhuyar-notranslate')
+  notranslates.forEach((notranslate) => notranslates_html.push(notranslate.getHTML()))
   if (!original_data){
     original_data = content.getHTML()
   }
@@ -21,7 +23,15 @@ const elhuyarTranslate = (selector, destination_language) => {
         content.innerHTML = data.translated_text
         content.classList.remove("elhuyar-loader-spinner")
         current.classList.remove('loading')
-        current.classList.add('active')
+        const notranslates = document.querySelectorAll('.elhuyar-notranslate')
+        notranslates.forEach((notranslate, i) => notranslate.innerHTML = notranslates_html[i])
+        const current2 = document.querySelector(`#elhuyar-translate-${destination_language}`)
+        current2.classList.add('active')
+
+      } else {
+        const current = document.querySelector(`#elhuyar-translate-${destination_language}`)
+        content.classList.remove("elhuyar-loader-spinner")
+        current.classList.remove('loading')
       }
     });
   }
@@ -37,6 +47,7 @@ async function postTranslation(url = '', data = {}) {
   if (response.ok){
     return response.json();
   }else{
+    console.error(response.status, response.statusText);
     return {}
   }
 }
