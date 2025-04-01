@@ -58,6 +58,33 @@ class IElhuyarAPIConfig(Interface):
         readonly=False,
     )
 
+    translatabel_css_selector = schema.TextLine(
+        title=_(
+            "The css selector to choose the content to translate",
+        ),
+        description=_(
+            "",
+        ),
+        default="body",
+        required=False,
+        readonly=False,
+    )
+
+    language_pairs_to = schema.List(
+        title=_(
+            u"Languages to give as translatable",
+        ),
+        description=_(
+            u"",
+        ),
+        value_type=schema.TextLine(
+            title=u"",
+        ),
+        default=[],
+        required=False,
+        readonly=False,
+    )
+
 
 class ElhuyarAPIConfig(RegistryEditForm):
     schema = IElhuyarAPIConfig

@@ -5,7 +5,7 @@
     >
         <value key="enabled">True</value>
         <value key="jscompilation">++plone++cs.translator.elhuyar/elhuyar.js</value>
-        <value key="csscompilation" />
+        <value key="csscompilation">++plone++cs.translator.elhuyar/elhuyar.css</value>
         <value key="load_async">False</value>
         <value key="load_defer">False</value>
     </records>

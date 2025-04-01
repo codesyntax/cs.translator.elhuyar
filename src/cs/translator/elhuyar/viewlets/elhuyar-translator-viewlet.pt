@@ -1,3 +1,7 @@
-<div class="days_to_conf">
-    ${view/message}
+<div class="elhuyart-notranslate spinner">
+    <div>
+        <button id="elhuyart-translate-destination" class="elhuyar" tal:repeat="lang view/language_options" tal:content="lang" tal:attributes="onClick string:elhuyarTranslate('${view/selector}', '${lang}'); id string:elhuyar-translate-${lang}"></button>
+        <a href="https://elia.eus/" target="_blank" title="Itzultzaile automatikoa"><img alt="elhuyar itzaultzaile automatikoaren logoa" src="/++plone++cs.translator.elhuyar/elia_RGB.webp"></a>
+    </div>
+    <p>Itzulpen automatikoa / Machine translation</p>
 </div>
