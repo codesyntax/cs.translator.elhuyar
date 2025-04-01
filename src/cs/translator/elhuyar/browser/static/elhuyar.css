@@ -4,33 +4,51 @@
   --elhuyar-hover-bg-color: rgba(0, 172, 169, 0.8) !important;
   --elhuyar-hover-txt-color: white;
 }
-
-button.elhuyar {
-  background-color: var(--elhuyar-bg-color) !important;
-  color: var(--elhuyar-txt-color) !important;
-  border: none;
-  border-radius: 50%;
-  text-transform: uppercase;
-  padding: 4px !important;
-  width: 40px;
-  height: 40px;
-  &:hover {
-    background-color: var(--elhuyar-hover-bg-color) !important;
-    color: var(--elhuyar-hover-txt-color) !important;
+.elhuyar-translate-destination-wrapper {
+  display: flex;
+  flex-direction: column;
+  .elhuyar-translate-destination-group {
+    display: flex;
+    justify-content: space-between;
+    .elhuyar-logo {
+      display: flex;
+      justify-content: end;
+      img {
+        margin-left: 1rem;
+        width: 50%;
+      }
+    }
+    button.elhuyar {
+      background-color: var(--elhuyar-bg-color) !important;
+      color: var(--elhuyar-txt-color) !important;
+      border: none;
+      border-radius: 50%;
+      text-transform: uppercase;
+      padding: 4px !important;
+      width: 40px;
+      height: 40px;
+      &:hover {
+        background-color: var(--elhuyar-hover-bg-color) !important;
+        color: var(--elhuyar-hover-txt-color) !important;
+      }
+      &.active {
+        background-color: var(--elhuyar-hover-bg-color) !important;
+        color: var(--elhuyar-hover-txt-color) !important;
+      }
+      &.loading:after {
+        border-radius: 50%;
+        border: 2px solid #eaf0f6;
+        border-top: 2px solid var(--elhuyar-hover-bg-color);
+        animation: spinner 1s infinite;
+        content: "";
+        position: absolute;
+        width: 15px;
+        height: 15px;
+      }
+    }
   }
-  &.active {
-    background-color: var(--elhuyar-hover-bg-color) !important;
-    color: var(--elhuyar-hover-txt-color) !important;
-  }
-  &.loading:after {
-    border-radius: 50%;
-    border: 2px solid #eaf0f6;
-    border-top: 2px solid var(--elhuyar-hover-bg-color);
-    animation: spinner 1s infinite;
-    content: "";
-    position: absolute;
-    width: 15px;
-    height: 15px;
+  .elhuyar-description {
+    font-size: 12px;
   }
 }
 
