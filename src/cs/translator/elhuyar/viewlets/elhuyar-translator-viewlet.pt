@@ -1,12 +1,15 @@
-<div class="elhuyar-notranslate elhuyar-translate-destination-wrapper">
-    <div class="elhuyar-translate-destination-group">
-        <div>
-            <button id="elhuyar-translate-destination" class="elhuyar" tal:repeat="lang view/language_options"
-                tal:content="lang"
-                tal:attributes="onClick string:elhuyarTranslate('${view/selector}', '${lang}'); id string:elhuyar-translate-${lang}"></button>
+<div id="elia">
+    <div class="elhuyar-notranslate elhuyar-translate-destination-wrapper">
+        <div class="elhuyar-translate-destination-group">
+            <div>
+                <button id="elhuyar-translate-destination" class="elhuyar" tal:repeat="lang view/language_options"
+                    tal:content="lang"
+                    tal:attributes="onClick string:elhuyarTranslate('${view/selector}', '${lang}'); id string:elhuyar-translate-${lang}"></button>
+            </div>
+            <a class="elhuyar-logo" href="https://elia.eus/" target="_blank" title="Itzultzaile automatikoa"><img
+                    alt="elhuyar itzaultzaile automatikoaren logoa"
+                    src="/++plone++cs.translator.elhuyar/elia_RGB.webp"></a>
         </div>
-        <a class="elhuyar-logo" href="https://elia.eus/" target="_blank" title="Itzultzaile automatikoa"><img
-                alt="elhuyar itzaultzaile automatikoaren logoa" src="/++plone++cs.translator.elhuyar/elia_RGB.webp"></a>
+        <p class="elhuyar-description">Itzulpen automatikoa / Machine translation</p>
     </div>
-    <p class="elhuyar-description">Itzulpen automatikoa / Machine translation</p>
 </div>
