@@ -1,17 +1,31 @@
 from cs.translator.elhuyar import _
-from zope.i18n import translate
-from plone.restapi.services import Service
 from plone import api
-import requests
+from plone.memoize.ram import cache
 from plone.restapi.deserializer import json_body
+from plone.restapi.services import Service
+from zope.i18n import translate
+
+import re
+import requests
 
 
 HEADERS = {"Accept": "application/json"}
 TIMEOUT = 7
 
 
+def cache_key(fun, self, language_pair, text):
+    """Remove _authenticator and data-token to cache logged in"""
+    text = re.sub(r"_authenticator=[a-zA-Z0-9]{40}", "", text)
+    text = re.sub(r'data-token="[a-zA-Z0-9]{40}"', "", text)
+
+    return (language_pair, text)
+
+
 class Translator(Service):
-    def reply(self):
+    @cache(cache_key)
+    def post_request(self, language_pair, text):
+        """Post request to the API"""
+        print("Someone or something called me")
         api_base_url = api.portal.get_registry_record(
             "cs.translator.elhuyar.elhuyar_a_p_i_config.api_base_url"
         )
@@ -24,6 +38,24 @@ class Translator(Service):
         translation_engine = api.portal.get_registry_record(
             "cs.translator.elhuyar.elhuyar_a_p_i_config.translation_engine"
         )
+        response = requests.post(
+            f"{api_base_url}/translate_string",
+            json={
+                "api_id": api_id,
+                "api_key": api_key,
+                "translation_engine": translation_engine,
+                # Language of the original text and objective language for the translation: es-eu | eu-es | etc
+                "language_pair": language_pair,
+                # hardcoded: Content type of the text: txt | html | xml
+                "content_type": "html",
+                "text": text,
+            },
+            headers=HEADERS,
+            timeout=TIMEOUT,
+        )
+        return response
+
+    def reply(self):
         body = json_body(self.request)
         language_pair = body.get("language_pair", None)
         text = body.get("text", None)
@@ -36,19 +68,7 @@ class Translator(Service):
                 ),
             }
         try:
-            result = requests.post(
-                f"{api_base_url}/translate_string",
-                json={
-                    "api_id": api_id,
-                    "api_key": api_key,
-                    "translation_engine": translation_engine,
-                    "language_pair": language_pair,  # Language of the original text and objective language for the translation: es-eu | eu-es | etc
-                    "content_type": "html",  # hardcoded: Content type of the text: txt | html | xml
-                    "text": text,
-                },
-                headers=HEADERS,
-                timeout=TIMEOUT,
-            )
+            result = self.post_request(language_pair, text)
             if result.ok:
                 # Ignoring keys:
                 # - "execution_time"
