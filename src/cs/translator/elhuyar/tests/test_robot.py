@@ -1,7 +1,4 @@
-# -*- coding: utf-8 -*-
-from cs.translator.elhuyar.testing import (  # noqa: E501
-    CS_TRANSLATOR_ELHUYAR_ACCEPTANCE_TESTING,
-)
+from cs.translator.elhuyar.testing import CS_TRANSLATOR_ELHUYAR_ACCEPTANCE_TESTING
 from plone.app.testing import ROBOT_TEST_LEVEL
 from plone.testing import layered
 
@@ -22,12 +19,10 @@ def test_suite():
     for robot_test in robot_tests:
         robottestsuite = robotsuite.RobotTestSuite(robot_test)
         robottestsuite.level = ROBOT_TEST_LEVEL
-        suite.addTests(
-            [
-                layered(
-                    robottestsuite,
-                    layer=CS_TRANSLATOR_ELHUYAR_ACCEPTANCE_TESTING,
-                ),
-            ]
-        )
+        suite.addTests([
+            layered(
+                robottestsuite,
+                layer=CS_TRANSLATOR_ELHUYAR_ACCEPTANCE_TESTING,
+            ),
+        ])
     return suite

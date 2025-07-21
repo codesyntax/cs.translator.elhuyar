@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from cs.translator.elhuyar.interfaces import ICsTranslatorElhuyarLayer
 from cs.translator.elhuyar.testing import CS_TRANSLATOR_ELHUYAR_FUNCTIONAL_TESTING
 from cs.translator.elhuyar.testing import CS_TRANSLATOR_ELHUYAR_INTEGRATION_TESTING
@@ -14,7 +13,6 @@ import unittest
 
 
 class ViewletIntegrationTest(unittest.TestCase):
-
     layer = CS_TRANSLATOR_ELHUYAR_INTEGRATION_TESTING
 
     def setUp(self):
@@ -39,7 +37,7 @@ class ViewletIntegrationTest(unittest.TestCase):
         manager.update()
         my_viewlet = [
             v for v in manager.viewlets if v.__name__ == "elhuyar-translator-viewlet"
-        ]  # NOQA: E501
+        ]
         self.assertEqual(len(my_viewlet), 1)
 
     # XXX would be nice to have this test working:
@@ -60,7 +58,6 @@ class ViewletIntegrationTest(unittest.TestCase):
 
 
 class ViewletFunctionalTest(unittest.TestCase):
-
     layer = CS_TRANSLATOR_ELHUYAR_FUNCTIONAL_TESTING
 
     def setUp(self):

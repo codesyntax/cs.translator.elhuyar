@@ -1,12 +1,10 @@
-# -*- coding: utf-8 -*-
-
 from plone import api
 from plone.app.layout.viewlets import ViewletBase
 
 
 class ElhuyarTranslatorViewlet(ViewletBase):
     def index(self):
-        return super(ElhuyarTranslatorViewlet, self).render()
+        return super().render()
 
     def language_options(self):
         language_pairs_to = api.portal.get_registry_record(
