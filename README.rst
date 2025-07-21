@@ -31,33 +31,22 @@
 cs.translator.elhuyar
 =====================
 
-An add-on for Plone
+This package provides a website live-translation service for Plone sites using the ELIA_ Translator by Elhuyar_ .
+
+This product is meant to be used in Plone Classic.
 
 Features
 --------
 
-- Can be bullet points
+- Viewlet that shows the translation service logo and the available translations
 
 
 Examples
 --------
 
 This add-on can be seen in action at the following sites:
-- Is there a page on the internet where everybody can see the features?
+- `Azpeitiko Udala`_
 
-
-Documentation
--------------
-
-Full documentation for end users can be found in the "docs" folder, and is also available online at http://docs.plone.org/foo/bar
-
-
-Translations
-------------
-
-This product has been translated into
-
-- Klingon (thanks, K'Plai)
 
 
 Installation
@@ -79,33 +68,28 @@ and then running ``bin/buildout``
 Authors
 -------
 
-Provided by awesome people ;)
-
-
-Contributors
-------------
-
-Put your name here, you deserve it!
-
-- ?
+Ion Lizarazu <ilazarazu@codesyntax.com>
+Lur Ibargutxi <libargutxi@codesyntax.com>
 
 
 Contribute
 ----------
 
-- Issue Tracker: https://github.com/collective/cs.translator.elhuyar/issues
-- Source Code: https://github.com/collective/cs.translator.elhuyar
-- Documentation: https://docs.plone.org/foo/bar
+- Issue Tracker: https://github.com/codesyntax/cs.translator.elhuyar/issues
+- Source Code: https://github.com/codesyntax/cs.translator.elhuyar
 
 
 Support
 -------
 
 If you are having issues, please let us know.
-We have a mailing list located at: project@example.com
 
 
 License
 -------
 
 The project is licensed under the GPLv2.
+
+.. _ELIA: https://elia.eus/
+.. _Elhuyar: https://www.elhuyar.eus/eu
+.. _`Azpeitiko Udala`: https://www.azpeitia.eus
