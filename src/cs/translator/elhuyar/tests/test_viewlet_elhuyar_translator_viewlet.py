@@ -18,26 +18,28 @@ class ViewletIntegrationTest(unittest.TestCase):
     layer = CS_TRANSLATOR_ELHUYAR_INTEGRATION_TESTING
 
     def setUp(self):
-        self.portal = self.layer['portal']
-        self.app = self.layer['app']
+        self.portal = self.layer["portal"]
+        self.app = self.layer["app"]
         self.request = self.app.REQUEST
-        setRoles(self.portal, TEST_USER_ID, ['Manager'])
-        api.content.create(self.portal, 'Document', 'other-document')
-        api.content.create(self.portal, 'News Item', 'newsitem')
+        setRoles(self.portal, TEST_USER_ID, ["Manager"])
+        api.content.create(self.portal, "Document", "other-document")
+        api.content.create(self.portal, "News Item", "newsitem")
 
     def test_elhuyar_translator_viewlet_is_registered(self):
-        view = BrowserView(self.portal['other-document'], self.request)
-        manager_name = 'plone.abovecontenttitle'
+        view = BrowserView(self.portal["other-document"], self.request)
+        manager_name = "plone.portalheader"
         alsoProvides(self.request, ICsTranslatorElhuyarLayer)
         manager = queryMultiAdapter(
-            (self.portal['other-document'], self.request, view),
+            (self.portal["other-document"], self.request, view),
             IViewletManager,
             manager_name,
-            default=None
+            default=None,
         )
         self.assertIsNotNone(manager)
         manager.update()
-        my_viewlet = [v for v in manager.viewlets if v.__name__ == 'elhuyar-translator-viewlet']  # NOQA: E501
+        my_viewlet = [
+            v for v in manager.viewlets if v.__name__ == "elhuyar-translator-viewlet"
+        ]  # NOQA: E501
         self.assertEqual(len(my_viewlet), 1)
 
     # XXX would be nice to have this test working:
@@ -62,5 +64,5 @@ class ViewletFunctionalTest(unittest.TestCase):
     layer = CS_TRANSLATOR_ELHUYAR_FUNCTIONAL_TESTING
 
     def setUp(self):
-        self.portal = self.layer['portal']
-        setRoles(self.portal, TEST_USER_ID, ['Manager'])
+        self.portal = self.layer["portal"]
+        setRoles(self.portal, TEST_USER_ID, ["Manager"])

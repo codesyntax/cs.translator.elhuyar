@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from plone.app.layout.viewlets import ViewletBase
 from plone import api
+from plone.app.layout.viewlets import ViewletBase
 
 
 class ElhuyarTranslatorViewlet(ViewletBase):

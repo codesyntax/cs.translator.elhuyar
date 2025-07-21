@@ -1,12 +1,10 @@
 # -*- coding: utf-8 -*-
 from plone.app.robotframework.testing import REMOTE_LIBRARY_BUNDLE_FIXTURE
-from plone.app.testing import (
-    applyProfile,
-    FunctionalTesting,
-    IntegrationTesting,
-    PLONE_FIXTURE,
-    PloneSandboxLayer,
-)
+from plone.app.testing import applyProfile
+from plone.app.testing import FunctionalTesting
+from plone.app.testing import IntegrationTesting
+from plone.app.testing import PLONE_FIXTURE
+from plone.app.testing import PloneSandboxLayer
 from plone.testing import z2
 
 import cs.translator.elhuyar
@@ -21,13 +19,15 @@ class CsTranslatorElhuyarLayer(PloneSandboxLayer):
         # The z3c.autoinclude feature is disabled in the Plone fixture base
         # layer.
         import plone.app.dexterity
+
         self.loadZCML(package=plone.app.dexterity)
         import plone.restapi
+
         self.loadZCML(package=plone.restapi)
         self.loadZCML(package=cs.translator.elhuyar)
 
     def setUpPloneSite(self, portal):
-        applyProfile(portal, 'cs.translator.elhuyar:default')
+        applyProfile(portal, "cs.translator.elhuyar:default")
 
 
 CS_TRANSLATOR_ELHUYAR_FIXTURE = CsTranslatorElhuyarLayer()
@@ -35,13 +35,13 @@ CS_TRANSLATOR_ELHUYAR_FIXTURE = CsTranslatorElhuyarLayer()
 
 CS_TRANSLATOR_ELHUYAR_INTEGRATION_TESTING = IntegrationTesting(
     bases=(CS_TRANSLATOR_ELHUYAR_FIXTURE,),
-    name='CsTranslatorElhuyarLayer:IntegrationTesting',
+    name="CsTranslatorElhuyarLayer:IntegrationTesting",
 )
 
 
 CS_TRANSLATOR_ELHUYAR_FUNCTIONAL_TESTING = FunctionalTesting(
     bases=(CS_TRANSLATOR_ELHUYAR_FIXTURE,),
-    name='CsTranslatorElhuyarLayer:FunctionalTesting',
+    name="CsTranslatorElhuyarLayer:FunctionalTesting",
 )
 
 
@@ -51,5 +51,5 @@ CS_TRANSLATOR_ELHUYAR_ACCEPTANCE_TESTING = FunctionalTesting(
         REMOTE_LIBRARY_BUNDLE_FIXTURE,
         z2.ZSERVER_FIXTURE,
     ),
-    name='CsTranslatorElhuyarLayer:AcceptanceTesting',
+    name="CsTranslatorElhuyarLayer:AcceptanceTesting",
 )

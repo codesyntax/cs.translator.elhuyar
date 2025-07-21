@@ -92,9 +92,7 @@ class ElhuyarAPIConfig(RegistryEditForm):
     label = _("Elhuyar API Config")
 
 
-ElhuyarAPIConfigView = layout.wrap_form(
-    ElhuyarAPIConfig, ControlPanelFormWrapper
-)
+ElhuyarAPIConfigView = layout.wrap_form(ElhuyarAPIConfig, ControlPanelFormWrapper)
 
 
 @adapter(Interface, ICsTranslatorElhuyarLayer)
