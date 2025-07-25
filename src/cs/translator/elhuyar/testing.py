@@ -1,4 +1,3 @@
-from plone.app.robotframework.testing import REMOTE_LIBRARY_BUNDLE_FIXTURE
 from plone.app.testing import applyProfile
 from plone.app.testing import FunctionalTesting
 from plone.app.testing import IntegrationTesting
@@ -42,12 +41,3 @@ CS_TRANSLATOR_ELHUYAR_FUNCTIONAL_TESTING = FunctionalTesting(
     name="CsTranslatorElhuyarLayer:FunctionalTesting",
 )
 
-
-CS_TRANSLATOR_ELHUYAR_ACCEPTANCE_TESTING = FunctionalTesting(
-    bases=(
-        CS_TRANSLATOR_ELHUYAR_FIXTURE,
-        REMOTE_LIBRARY_BUNDLE_FIXTURE,
-        z2.ZSERVER_FIXTURE,
-    ),
-    name="CsTranslatorElhuyarLayer:AcceptanceTesting",
-)
