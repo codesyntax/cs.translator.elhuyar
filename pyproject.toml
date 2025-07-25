@@ -37,6 +37,11 @@ test = [
     "pytest-cov",
     "pytest-plone>=0.5.0",
 ]
+release = [
+    "zest.releaser[recommended]",
+    "zestreleaser.towncrier",
+    "zest.pocompile",
+]
 
 [project.urls]
 Homepage = "https://github.com/codesyntax/cs.translator.elhuyar"
@@ -166,3 +171,6 @@ source_pkgs = ["cs.translator.elhuyar", "tests"]
 branch = true
 parallel = true
 omit = ["src/cs/translator/elhuyar/locales/*.py"]
+
+[tool.zest-releaser]
+python-file-with-version = "src/cs/translator/elhuyar/__init__.py"
