@@ -3,20 +3,22 @@
     xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:i18n="http://namespaces.zope.org/i18n"
     xmlns:plone="http://namespaces.plone.org/plone"
-    i18n_domain="cs.translator.elhuyar">
+    i18n_domain="cs.translator.elhuyar"
+    >
 
   <browser:page
-    name="elhuyar_a_p_i_config-controlpanel"
-    for="Products.CMFPlone.interfaces.IPloneSiteRoot"
-    class=".controlpanel.ElhuyarAPIConfigView"
-    layer="cs.translator.elhuyar.interfaces.ICsTranslatorElhuyarLayer"
-    permission="cmf.ManagePortal"
-    />
+      name="elhuyar_a_p_i_config-controlpanel"
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      class=".controlpanel.ElhuyarAPIConfigView"
+      permission="cmf.ManagePortal"
+      layer="cs.translator.elhuyar.interfaces.ICsTranslatorElhuyarLayer"
+      />
 
-  <include package="plone.restapi"  />
+  <include package="plone.restapi" />
   <adapter
-    factory=".controlpanel.ElhuyarAPIConfigConfigletPanel"
-    name="elhuyar_a_p_i_config" />
+      factory=".controlpanel.ElhuyarAPIConfigConfigletPanel"
+      name="elhuyar_a_p_i_config"
+      />
 
 
 </configure>

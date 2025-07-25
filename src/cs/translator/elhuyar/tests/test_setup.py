@@ -1,5 +1,5 @@
-# -*- coding: utf-8 -*-
 """Setup tests for this package."""
+
 from cs.translator.elhuyar.testing import CS_TRANSLATOR_ELHUYAR_INTEGRATION_TESTING
 from plone import api
 from plone.app.testing import setRoles
@@ -40,7 +40,6 @@ class TestSetup(unittest.TestCase):
 
 
 class TestUninstall(unittest.TestCase):
-
     layer = CS_TRANSLATOR_ELHUYAR_INTEGRATION_TESTING
 
     def setUp(self):

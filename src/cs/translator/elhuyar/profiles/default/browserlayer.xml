@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <layers>
-  <layer
-      name="cs.translator.elhuyar"
-      interface="cs.translator.elhuyar.interfaces.ICsTranslatorElhuyarLayer"
-      />
+  <layer interface="cs.translator.elhuyar.interfaces.ICsTranslatorElhuyarLayer"
+         name="cs.translator.elhuyar"
+  />
 </layers>

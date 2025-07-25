@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from cs.translator.elhuyar import _
 from cs.translator.elhuyar.interfaces import ICsTranslatorElhuyarLayer
 from plone.app.registry.browser.controlpanel import ControlPanelFormWrapper
@@ -11,7 +10,6 @@ from zope.interface import Interface
 
 
 class IElhuyarAPIConfig(Interface):
-
     api_base_url = schema.TextLine(
         title=_(
             "The API base url",

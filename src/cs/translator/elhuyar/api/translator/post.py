@@ -44,7 +44,8 @@ class Translator(Service):
                 "api_id": api_id,
                 "api_key": api_key,
                 "translation_engine": translation_engine,
-                # Language of the original text and objective language for the translation: es-eu | eu-es | etc
+                # Language of the original text and target language
+                # for the translation: es-eu | eu-es | etc
                 "language_pair": language_pair,
                 # hardcoded: Content type of the text: txt | html | xml
                 "content_type": "html",
