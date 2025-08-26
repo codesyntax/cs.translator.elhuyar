@@ -6,6 +6,7 @@ include Makefile
 include bobtemplate.cfg
 include mx.ini
 recursive-include news *.internal
+recursive-include news *.jinja
 recursive-include src *.css
 recursive-include src *.gitkeep
 recursive-include src *.js
