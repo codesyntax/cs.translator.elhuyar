@@ -4,12 +4,6 @@
     xmlns:plone="http://namespaces.plone.org/plone"
     i18n_domain="cs.translator.elhuyar"
     >
-
-  <!-- Publish static files -->
-  <plone:static
-      directory="static"
-      name="cs.translator.elhuyar"
-      type="plone"
-      />
-
+  <!-- -*- extra stuff goes here -*- -->
+  <include package=".translator" />
 </configure>
