@@ -1,9 +1,11 @@
+include *.in
 include *.rst
 include *.txt
 include *.yaml
 include Makefile
 include bobtemplate.cfg
 include mx.ini
+recursive-include news *.internal
 recursive-include src *.css
 recursive-include src *.gitkeep
 recursive-include src *.js
