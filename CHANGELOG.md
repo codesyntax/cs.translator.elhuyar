@@ -3,4 +3,4 @@
 
 ### Internal:
 
-- Initial releease @erral
+- Initial release @erral

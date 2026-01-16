@@ -1,11 +1,12 @@
 """Setup tests for this package."""
 
+from cs.translator.elhuyar.testing import CS_TRANSLATOR_ELHUYAR_INTEGRATION_TESTING
+from plone import api
+from plone.app.testing import setRoles
+from plone.app.testing import TEST_USER_ID
+
 import unittest
 
-from plone import api
-from plone.app.testing import TEST_USER_ID, setRoles
-
-from cs.translator.elhuyar.testing import CS_TRANSLATOR_ELHUYAR_INTEGRATION_TESTING
 
 try:
     from Products.CMFPlone.utils import get_installer
@@ -32,9 +33,8 @@ class TestSetup(unittest.TestCase):
 
     def test_browserlayer(self):
         """Test that ICsTranslatorElhuyarLayer is registered."""
-        from plone.browserlayer import utils
-
         from cs.translator.elhuyar.interfaces import ICsTranslatorElhuyarLayer
+        from plone.browserlayer import utils
 
         self.assertIn(ICsTranslatorElhuyarLayer, utils.registered_layers())
 
@@ -59,8 +59,7 @@ class TestUninstall(unittest.TestCase):
 
     def test_browserlayer_removed(self):
         """Test that ICsTranslatorElhuyarLayer is removed."""
-        from plone.browserlayer import utils
-
         from cs.translator.elhuyar.interfaces import ICsTranslatorElhuyarLayer
+        from plone.browserlayer import utils
 
         self.assertNotIn(ICsTranslatorElhuyarLayer, utils.registered_layers())

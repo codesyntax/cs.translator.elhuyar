@@ -1,7 +1,7 @@
-# -*- coding: utf-8 -*-
 """Installer for the cs.translator.elhuyar package."""
 
-from setuptools import find_packages, setup
+from setuptools import setup
+
 
 long_description = "\n\n".join(
     [
@@ -12,16 +12,18 @@ long_description = "\n\n".join(
 
 setup(
     name="cs.translator.elhuyar",
-    version="1.2.dev0",
+    version="2.0.dev0",
     description="An add-on for Plone",
     long_description=long_description,
     # Get more from https://pypi.org/classifiers/
     classifiers=[
+        "Development Status :: 5 - Production/Stable",
         "Environment :: Web Environment",
         "Framework :: Plone",
-        "Framework :: Plone :: Addon",
         "Framework :: Plone :: 6.0",
         "Framework :: Plone :: 6.1",
+        "Framework :: Plone :: 6.2",
+        "Framework :: Plone :: Addon",
         "Programming Language :: Python",
         "Programming Language :: Python :: 3.10",
         "Programming Language :: Python :: 3.11",
@@ -41,18 +43,22 @@ setup(
         # 'Documentation': 'https://cs.translator.elhuyar.readthedocs.io/en/latest/',
     },
     license="GPL version 2",
-    packages=find_packages("src", exclude=["ez_setup"]),
-    namespace_packages=["cs", "cs.translator"],
-    package_dir={"": "src"},
     include_package_data=True,
     zip_safe=False,
-    python_requires=">=3.10",
+    python_requires=">=3.10,<3.14",
     install_requires=[
-        "setuptools",
         # -*- Extra requirements: -*-
         "plone.api>=1.8.4",
         "plone.restapi",
         "requests",
+        "Products.CMFPlone",
+        "Zope",
+        "plone.app.layout",
+        "plone.app.registry",
+        "plone.memoize",
+        "plone.z3cform",
+        "plone.app.upgrade",
+        "Products.GenericSetup",
     ],
     extras_require={
         "test": [
@@ -60,8 +66,8 @@ setup(
             # Plone KGS does not use this version, because it would break
             # Remove if your package shall be part of coredev.
             # plone_coredev tests as of 2016-04-01.
-            "plone.testing>=5.0.0",
-            "plone.app.contenttypes",
+            "plone.app.dexterity",
+            "plone.browserlayer",
             "pytest",
             "pytest-cov",
             "pytest-plone>=0.5.0",
