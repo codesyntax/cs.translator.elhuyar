@@ -131,7 +131,7 @@ test-coverage: $(VENV_FOLDER) ## run tests with coverage
 
 ## Add bobtemplates features (check bobtemplates.plone's documentation to get the list of available features)
 add: $(VENV_FOLDER)
-	/home/lur/plonecli_azkena/bin/plonecli add $(filter-out $@,$(MAKECMDGOALS))
+	@uvx plonecli --with=bobtemplates.plone==7.0.0b2 add $(filter-out $@,$(MAKECMDGOALS))
 
 .PHONY: release
 release: $(VENV_FOLDER) ## Create a release
