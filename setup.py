@@ -65,6 +65,7 @@ setup(
             "plone.app.robotframework[debug]",
             "pytest",
             "pytest-plone",
+            "zope.pytestlayer",
             "plone.app.upgrade",
         ],
     },
