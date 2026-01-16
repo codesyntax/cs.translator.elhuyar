@@ -10,6 +10,8 @@ extra_lines = """
 .mxdev_cache
 """
 
+[tox]
+test_matrix = {"6.2" = ["*"]}
 
 [pyproject]
 dependencies_ignores = ['pytest', 'pytest-cov']
