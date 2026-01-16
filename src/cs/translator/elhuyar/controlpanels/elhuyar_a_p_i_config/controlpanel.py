@@ -1,12 +1,15 @@
-from cs.translator.elhuyar import _
-from cs.translator.elhuyar.interfaces import ICsTranslatorElhuyarLayer
-from plone.app.registry.browser.controlpanel import ControlPanelFormWrapper
-from plone.app.registry.browser.controlpanel import RegistryEditForm
+from plone.app.registry.browser.controlpanel import (
+    ControlPanelFormWrapper,
+    RegistryEditForm,
+)
 from plone.restapi.controlpanels import RegistryConfigletPanel
 from plone.z3cform import layout
 from zope import schema
 from zope.component import adapter
 from zope.interface import Interface
+
+from cs.translator.elhuyar import _
+from cs.translator.elhuyar.interfaces import ICsTranslatorElhuyarLayer
 
 
 class IElhuyarAPIConfig(Interface):
@@ -80,6 +83,15 @@ class IElhuyarAPIConfig(Interface):
         ),
         default=[],
         required=False,
+        readonly=False,
+    )
+
+    timeout = schema.Int(
+        title=_(
+            "Default timeout used when connecting to the translation service",
+        ),
+        default=10,
+        required=True,
         readonly=False,
     )
 

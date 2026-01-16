@@ -118,7 +118,7 @@ check: format lint ## Check and fix code base according to Plone standards
 .PHONY: i18n
 i18n: $(VENV_FOLDER) ## Update locales
 	@echo "$(GREEN)==> Updating locales$(RESET)"
-	@$(BIN_FOLDER)/python -m cs_dynamicpages.locales
+	@$(BIN_FOLDER)/python -m cs.translator.elhuyar.locales
 
 # Tests
 .PHONY: test
@@ -127,11 +127,11 @@ test: $(VENV_FOLDER) ## run tests
 
 .PHONY: test-coverage
 test-coverage: $(VENV_FOLDER) ## run tests with coverage
-	@$(BIN_FOLDER)/pytest --cov=cs_dynamicpages --cov-report term-missing
+	@$(BIN_FOLDER)/pytest --cov=cs.translator.elhuyar --cov-report term-missing
 
 ## Add bobtemplates features (check bobtemplates.plone's documentation to get the list of available features)
 add: $(VENV_FOLDER)
-	/home/lur/plonecli_azkena/bin/plonecli add $(filter-out $@,$(MAKECMDGOALS))
+	@uvx --with=bobtemplates.plone==7.0.0b2 plonecli add $(filter-out $@,$(MAKECMDGOALS))
 
 .PHONY: release
 release: $(VENV_FOLDER) ## Create a release
