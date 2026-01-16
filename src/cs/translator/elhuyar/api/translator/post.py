@@ -1,13 +1,13 @@
-import re
-
-import requests
+from cs.translator.elhuyar import _
 from plone import api
 from plone.memoize.ram import cache
 from plone.restapi.deserializer import json_body
 from plone.restapi.services import Service
 from zope.i18n import translate
 
-from cs.translator.elhuyar import _
+import re
+import requests
+
 
 HEADERS = {"Accept": "application/json"}
 
