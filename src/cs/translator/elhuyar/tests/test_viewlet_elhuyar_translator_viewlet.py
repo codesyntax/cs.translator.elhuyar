@@ -1,15 +1,17 @@
-from cs.translator.elhuyar.interfaces import ICsTranslatorElhuyarLayer
-from cs.translator.elhuyar.testing import CS_TRANSLATOR_ELHUYAR_FUNCTIONAL_TESTING
-from cs.translator.elhuyar.testing import CS_TRANSLATOR_ELHUYAR_INTEGRATION_TESTING
+import unittest
+
 from plone import api
-from plone.app.testing import setRoles
-from plone.app.testing import TEST_USER_ID
+from plone.app.testing import TEST_USER_ID, setRoles
 from Products.Five.browser import BrowserView
 from zope.component import queryMultiAdapter
 from zope.interface import alsoProvides
 from zope.viewlet.interfaces import IViewletManager
 
-import unittest
+from cs.translator.elhuyar.interfaces import ICsTranslatorElhuyarLayer
+from cs.translator.elhuyar.testing import (
+    CS_TRANSLATOR_ELHUYAR_FUNCTIONAL_TESTING,
+    CS_TRANSLATOR_ELHUYAR_INTEGRATION_TESTING,
+)
 
 
 class ViewletIntegrationTest(unittest.TestCase):
