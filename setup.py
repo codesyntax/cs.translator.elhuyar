@@ -18,6 +18,8 @@ setup(
     classifiers=[
         "Environment :: Web Environment",
         "Framework :: Plone",
+        "Framework :: Plone :: 6.0",
+        "Framework :: Plone :: 6.1",
         "Framework :: Plone :: 6.2",
         "Framework :: Plone :: Addon",
         "Programming Language :: Python",
@@ -41,12 +43,20 @@ setup(
     license="GPL version 2",
     include_package_data=True,
     zip_safe=False,
-    python_requires=">=3.10",
+    python_requires=">=3.10,<3.14",
     install_requires=[
         # -*- Extra requirements: -*-
         "plone.api>=1.8.4",
         "plone.restapi",
         "requests",
+        "Products.CMFPlone",
+        "Zope",
+        "plone.app.layout",
+        "plone.app.registry",
+        "plone.memoize",
+        "plone.z3cform",
+        "plone.app.upgrade",
+        "Products.GenericSetup",
     ],
     extras_require={
         "test": [
@@ -54,8 +64,8 @@ setup(
             # Plone KGS does not use this version, because it would break
             # Remove if your package shall be part of coredev.
             # plone_coredev tests as of 2016-04-01.
-            "plone.testing>=5.0.0",
-            "plone.app.contenttypes",
+            "plone.app.dexterity",
+            "plone.browserlayer",
             "pytest",
             "pytest-cov",
             "pytest-plone>=0.5.0",
