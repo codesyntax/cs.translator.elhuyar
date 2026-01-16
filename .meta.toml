@@ -4,3 +4,8 @@
 [meta]
 template = "default"
 commit-id = "2.3.1"
+
+[gitignore]
+extra_lines = """
+.mxdev_cache
+"""

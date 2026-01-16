@@ -1,9 +1,8 @@
-# -*- coding: utf-8 -*-
+# from cs.translator.elhuyar.testing import FUNCTIONAL_TESTING
 import unittest
 
 from plone.app.testing import TEST_USER_ID, setRoles
 
-# from cs.translator.elhuyar.testing import FUNCTIONAL_TESTING
 from cs.translator.elhuyar.testing import CS_TRANSLATOR_ELHUYAR_INTEGRATION_TESTING
 
 

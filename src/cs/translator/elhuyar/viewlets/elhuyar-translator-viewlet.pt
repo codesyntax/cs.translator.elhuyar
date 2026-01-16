@@ -15,11 +15,15 @@
       <a class="elhuyar-logo"
          href="https://elia.eus/"
          target="_blank"
-         title="Itzultzaile automatikoa"
-      ><img alt="elhuyar itzaultzaile automatikoaren logoa"
+         title="automatic translator"
+         i18n:attributes="title"
+      ><img alt="Logo of the automatic translator"
              src="/++plone++cs.translator.elhuyar/elia_RGB.webp"
+             i18n:attributes="alt"
         /></a>
     </div>
-    <p class="elhuyar-description">Itzulpen automatikoa / Machine translation</p>
+    <p class="elhuyar-description"
+       i18n:translate=""
+    >Machine translation</p>
   </div>
 </div>

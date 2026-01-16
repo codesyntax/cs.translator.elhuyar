@@ -1,7 +1,6 @@
-# -*- coding: utf-8 -*-
 """Installer for the cs.translator.elhuyar package."""
 
-from setuptools import find_packages, setup
+from setuptools import setup
 
 long_description = "\n\n".join(
     [
@@ -12,16 +11,15 @@ long_description = "\n\n".join(
 
 setup(
     name="cs.translator.elhuyar",
-    version="2.0.dev0",
+    version="1.2.dev0",
     description="An add-on for Plone",
     long_description=long_description,
     # Get more from https://pypi.org/classifiers/
     classifiers=[
         "Environment :: Web Environment",
         "Framework :: Plone",
+        "Framework :: Plone :: 6.2",
         "Framework :: Plone :: Addon",
-        "Framework :: Plone :: 6.0",
-        "Framework :: Plone :: 6.1",
         "Programming Language :: Python",
         "Programming Language :: Python :: 3.10",
         "Programming Language :: Python :: 3.11",
@@ -41,14 +39,10 @@ setup(
         # 'Documentation': 'https://cs.translator.elhuyar.readthedocs.io/en/latest/',
     },
     license="GPL version 2",
-    packages=find_packages("src", exclude=["ez_setup"]),
-    namespace_packages=["cs", "cs.translator"],
-    package_dir={"": "src"},
     include_package_data=True,
     zip_safe=False,
     python_requires=">=3.10",
     install_requires=[
-        "setuptools",
         # -*- Extra requirements: -*-
         "plone.api>=1.8.4",
         "plone.restapi",
