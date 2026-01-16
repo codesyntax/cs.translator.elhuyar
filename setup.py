@@ -51,6 +51,8 @@ setup(
         "setuptools",
         # -*- Extra requirements: -*-
         "plone.api>=1.8.4",
+        "plone.restapi",
+        "requests",
     ],
     extras_require={
         "test": [
@@ -62,6 +64,8 @@ setup(
             "plone.app.contenttypes",
             "plone.app.robotframework[debug]",
             "pytest",
+            "pytest-plone",
+            "plone.app.upgrade",
         ],
     },
     entry_points="""

@@ -4,11 +4,11 @@ import unittest
 from plone.app.testing import TEST_USER_ID, setRoles
 
 # from cs.translator.elhuyar.testing import FUNCTIONAL_TESTING
-from cs.translator.elhuyar.testing import INTEGRATION_TESTING
+from cs.translator.elhuyar.testing import CS_TRANSLATOR_ELHUYAR_INTEGRATION_TESTING
 
 
 class UpgradeStepIntegrationTest(unittest.TestCase):
-    layer = INTEGRATION_TESTING
+    layer = CS_TRANSLATOR_ELHUYAR_INTEGRATION_TESTING
 
     def setUp(self):
         self.portal = self.layer["portal"]
