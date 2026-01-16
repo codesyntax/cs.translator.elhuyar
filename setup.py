@@ -62,10 +62,9 @@ setup(
             # plone_coredev tests as of 2016-04-01.
             "plone.testing>=5.0.0",
             "plone.app.contenttypes",
-            "plone.app.robotframework[debug]",
             "pytest",
-            "pytest-plone",
-            "zope.pytestlayer",
+            "pytest-cov",
+            "pytest-plone>=0.5.0",
             "plone.app.upgrade",
         ],
     },
