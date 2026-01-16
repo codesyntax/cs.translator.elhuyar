@@ -83,11 +83,11 @@ class IElhuyarAPIConfig(Interface):
         readonly=False,
     )
 
-    timeout = schema.TextLine(
+    timeout = schema.Int(
         title=_(
             "Default timeout used when connecting to the translation service",
         ),
-        default="10",
+        default=10,
         required=True,
         readonly=False,
     )

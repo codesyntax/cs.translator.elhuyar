@@ -24,14 +24,9 @@ class Translator(Service):
 
     @property
     def timeout(self):
-        try:
-            return int(
-                api.portal.get_registry_record(
-                    "cs.translator.elhuyar.elhuyar_a_p_i_config.timeout"
-                )
-            )
-        except ValueError:
-            return 7
+        return api.portal.get_registry_record(
+            "cs.translator.elhuyar.elhuyar_a_p_i_config.timeout"
+        )
 
     @cache(cache_key)
     def post_request(self, language_pair, text):
