@@ -2,6 +2,7 @@
 
 from setuptools import setup
 
+
 long_description = "\n\n".join(
     [
         open("README.md").read(),
