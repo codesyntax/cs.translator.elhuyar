@@ -11,7 +11,7 @@ extra_lines = """
 """
 
 [tox]
-test_matrix = {"6.2" = ["*"]}
+test_matrix = {"6.2" = ["3.13", "3.12", "3.11", "3.10"]}
 
 [pyproject]
 dependencies_ignores = ['pytest', 'pytest-cov']
