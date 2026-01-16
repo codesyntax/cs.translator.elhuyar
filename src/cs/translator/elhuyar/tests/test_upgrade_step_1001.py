@@ -1,9 +1,9 @@
 # from cs.translator.elhuyar.testing import FUNCTIONAL_TESTING
-from cs.translator.elhuyar.testing import CS_TRANSLATOR_ELHUYAR_INTEGRATION_TESTING
-from plone.app.testing import setRoles
-from plone.app.testing import TEST_USER_ID
-
 import unittest
+
+from plone.app.testing import TEST_USER_ID, setRoles
+
+from cs.translator.elhuyar.testing import CS_TRANSLATOR_ELHUYAR_INTEGRATION_TESTING
 
 
 class UpgradeStepIntegrationTest(unittest.TestCase):
