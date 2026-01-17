@@ -1,3 +1,11 @@
+# 2.0.1 (2026-01-17)
+
+## Internal:
+
+
+- Formatting of README and pypi page @erral
+
+
 # 2.0 (2026-01-16)
 
 ## Breaking changes:
