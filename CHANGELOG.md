@@ -14,7 +14,7 @@
 
 ### Internal:
 
-- Fix changelog formatting @erral [#changelog]({ cookiecutter.__repository_url }/issues/changelog)
+- Fix changelog formatting @erral
 
 # 2.0.1 (2026-01-17)
 
