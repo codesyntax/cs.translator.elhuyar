@@ -75,6 +75,11 @@ setup(
             "pytest-plone>=0.5.0",
             "plone.app.upgrade",
         ],
+        "release": [
+            "zest.releaser[recommended]",
+            "zestreleaser.towncrier",
+            "zest.pocompile",
+        ],
     },
     entry_points="""
     [z3c.autoinclude.plugin]
