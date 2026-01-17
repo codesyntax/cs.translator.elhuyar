@@ -9,6 +9,12 @@
 
 <!-- towncrier release notes start -->
 
+## 2.0.2 (2026-01-17)
+
+
+### Internal:
+
+- Fix changelog formatting @erral [#changelog]({ cookiecutter.__repository_url }/issues/changelog)
 
 # 2.0.1 (2026-01-17)
 
