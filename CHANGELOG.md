@@ -9,6 +9,13 @@
 
 <!-- towncrier release notes start -->
 
+## 2.0.3 (2026-01-17)
+
+
+### Internal:
+
+- Polish readme and changelog @erral 
+
 ## 2.0.2 (2026-01-17)
 
 
