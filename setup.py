@@ -6,6 +6,7 @@ from setuptools import setup
 long_description = "\n\n".join(
     [
         open("README.md").read(),
+        open("CHANGELOG.md").read(),
     ]
 )
 
@@ -15,6 +16,7 @@ setup(
     version="2.1.dev0",
     description="An add-on for Plone",
     long_description=long_description,
+    long_description_content_type="text/markdown",
     # Get more from https://pypi.org/classifiers/
     classifiers=[
         "Development Status :: 5 - Production/Stable",
