@@ -7,8 +7,11 @@ requires = ["setuptools>=68.2,<80", "wheel"]
 [tool.towncrier]
 directory = "news/"
 filename = "CHANGELOG.md"
-title_format = "{version} ({project_date})"
-underlines = ["-", ""]
+start_string = "<!-- towncrier release notes start -->\n"
+title_format = "## {version} ({project_date})"
+template = "news/.changelog_template.jinja"
+issue_format = "[#{issue}]({{ cookiecutter.__repository_url }}/issues/{issue})"
+underlines = ["", "", ""]
 
 [[tool.towncrier.type]]
 directory = "breaking"
