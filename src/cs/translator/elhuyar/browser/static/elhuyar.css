@@ -20,7 +20,7 @@
       }
     }
     button.elhuyar {
-      background-color: white;
+      background-color: transparent;
       color: var(--elhuyar-color-1) !important;
       border: none;
       text-transform: uppercase;
