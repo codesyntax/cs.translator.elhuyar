@@ -9,6 +9,13 @@
 
 <!-- towncrier release notes start -->
 
+## 2.0.4 (2026-04-15)
+
+
+### Bug fixes:
+
+- Style bugfix @libargutxi 
+
 ## 2.0.3 (2026-01-17)
 
 
